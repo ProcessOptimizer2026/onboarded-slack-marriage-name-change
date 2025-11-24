@@ -4,7 +4,7 @@ This project implements an **end-to-end integration** between **Slack** and **On
 
 When the employee completes the form in Onboarded, a completion notification is posted back into Slack.
 
-This project demonstrates **system connectivity**, **real-time webhook handling**, **data transformation**, and **clean integration design**.
+This project demonstrates*system connectivity, real-time webhook handling, data transformation, and clean integration design.
 
 -----
 
