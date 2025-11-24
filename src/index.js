@@ -116,8 +116,8 @@ app.post("/slack/commands", async (req, res) => {
     // ------------------------------------
     await client.post("/tasks?allow_duplicate=true", {
       employee_id: employeeId,
-      form_id: nameChangeFormId, // from .env
-      employer_id: process.env.NAME_CHANGE_EMPLOYER_ID // add this!
+      form_id: nameChangeFormId, 
+      employer_id: process.env.NAME_CHANGE_EMPLOYER_ID 
     });
 
     // ------------------------------------
@@ -144,7 +144,6 @@ app.post("/slack/commands", async (req, res) => {
 // Onboarded Webhook Receiver
 // (Handles task.updated events)
 // ------------------------------------
-// Onboarded Webhook Receiver
 app.post(
   "/onboarded/webhook",
   bodyParser.json({ type: "*/*" }), // be generous about content-type
@@ -168,7 +167,7 @@ app.post(
         if (!slackWebhookUrl) {
           console.error("SLACK_COMPLETIONS_WEBHOOK_URL not set");
         } else {
-          // 🔍 Look up employee to get email (and optionally name)
+          // Look up employee to get email (and optionally name)
           let employeeEmail = task.employee_id;
           let employeeName = null;
 
