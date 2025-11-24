@@ -47,24 +47,40 @@ Cloudflare Tunnel (public HTTPS endpoint)
         ▼
 Local Node.js Service (Express)
         │
-        ├── Calls Onboarded API (GET /employees, PATCH /employees, POST /tasks)
+        ├── Validates input
+        │
+        ├── Calls Onboarded API:
+        │       • GET /employees
+        │       • PATCH /employees
+        │       • POST /tasks
         │
         ▼
 Onboarded
         │
-        ├── Updates employee + creates task
+        ├── Returns employee list (GET)
+        │
+        ├── Name gets updated + task creation
+        │       • 200 Success (Employee Updated + Task Created)
+        │
+        ▼
+Employee completes form in Onboarded
         │
         ▼
 Onboarded Webhook (task.updated)
         │
         ▼
-Cloudflare Tunnel (forwards webhook request)
+Cloudflare Tunnel (forwards webhook)
         │
         ▼
 Local Node.js Service (Webhook handler)
         │
+        ├── Looks up employee info
+        │
         ▼
-Slack Incoming Webhook (channel notification)
+Slack Incoming Webhook
+        │
+        ▼
+Channel Notification (Task Completed)
 ```
 
 ### Core Components
