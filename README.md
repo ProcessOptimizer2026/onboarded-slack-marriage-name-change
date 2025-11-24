@@ -72,7 +72,7 @@ Onboarded Webhook → Local Node.js → Slack Incoming Webhook
       * Slash command
       * Incoming Webhook
   * **Onboarded staging credentials**
-  * **Cloudflare Tunnel** or **ngrok** (to expose local server)
+  * **Cloudflare Tunnel** (to expose local server)
 
 ### 1\. Clone the repository
 
