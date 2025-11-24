@@ -39,17 +39,32 @@ When the task is completed in Onboarded:
 ## Architecture
 
 ```
-Slack Slash Command
+Slack Slash Command App
+        │
+        ▼
+Cloudflare Tunnel (public HTTPS endpoint)
         │
         ▼
 Local Node.js Service (Express)
         │
-        ▼
-Onboarded API
-        ▲
+        ├── Calls Onboarded API (GET /employees, PATCH /employees, POST /tasks)
         │
         ▼
-Onboarded Webhook → Local Node.js → Slack Incoming Webhook
+Onboarded
+        │
+        ├── Updates employee + creates task
+        │
+        ▼
+Onboarded Webhook (task.updated)
+        │
+        ▼
+Cloudflare Tunnel (forwards webhook request)
+        │
+        ▼
+Local Node.js Service (Webhook handler)
+        │
+        ▼
+Slack Incoming Webhook (channel notification)
 ```
 
 ### Core Components
