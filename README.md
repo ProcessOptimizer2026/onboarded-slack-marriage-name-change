@@ -1,4 +1,4 @@
-## Slack ↔ Onboarded Marriage Name Change Integration
+## Slack <> Onboarded Marriage Name Change Integration
 
 This project implements an **end-to-end integration** between **Slack** and **Onboarded** that automates a common HR workflow: updating an employee’s last name after marriage and generating a related compliance form.
 
